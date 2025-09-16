@@ -26,3 +26,15 @@ button.addEventListener('click', () => {
   const randomPhrase = getRandomPhrase();
   phraseContainer.textContent = randomPhrase;
 });
+
+const newPhraseInput = document.getElementById('new-phrase-input');
+const addPhraseBtn = document.getElementById('add-phrase-btn');
+
+addPhraseBtn.addEventListener('click', () => {
+  const newPhrase = newPhraseInput.value.trim();
+  if (newPhrase) {
+    phrases.push(newPhrase);
+    newPhraseInput.value = ''; // Limpiar el campo de texto
+    alert('¡Frase agregada con éxito!');
+  }
+});
